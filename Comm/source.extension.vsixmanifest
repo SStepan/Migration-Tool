@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+	<Metadata>
+		<Identity Id="Comm.Stepan.586082f7-177d-4a8a-bc31-236a8a7ba011" Version="1.0" Language="en-US" Publisher="Stepan" />
+		<DisplayName>Migration Tool</DisplayName>
+		<Description xml:space="preserve">Extention for automatic creation migration script. Work with swn and git control versions</Description>
+		<Icon>Resources\SharpMinds.ico</Icon>
+		<PreviewImage>Resources\SharpMinds.png</PreviewImage>
+	</Metadata>
+	<Installation>
+		<InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+	</Installation>
+	<Dependencies>
+		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+		<Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+	</Dependencies>
+	<Assets>
+		<Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="LibGit2Sharp.dll" AssemblyName="LibGit2Sharp, Version=0.22.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333" />
+		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="LibGit2Sharp.dll" AssemblyName="LibGit2Sharp, Version=0.22.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333" />
+	</Assets>
+</PackageManifest>
