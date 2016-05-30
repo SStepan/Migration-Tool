@@ -9,13 +9,13 @@ namespace Comm
 	{
 		protected Inserts GetFileChanges(string patch) {
 			Inserts cont = new Inserts();
-			Regex regPlus = new Regex("^\\+");
-			Regex regMin = new Regex("^\\-");
+			Regex regPlus = new Regex("^\\+\\w+.*");
+			Regex regMin = new Regex("^\\-\\w+.*");
 
 
 			Regex comment = new Regex("--");
 			Regex setIdent = new Regex("SET IDENTITY_INSERT");
-			string[] splitPatch = patch.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+			string[] splitPatch = patch.Split(new string[] { "\r", "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
 			List<string> added = splitPatch.Where(t => regPlus.IsMatch(t)).ToList();
 			foreach (string line in added) {
