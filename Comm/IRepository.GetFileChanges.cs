@@ -13,7 +13,7 @@ namespace Comm
 			Regex regMin = new Regex("^\\-\\w+.*");
 
 
-			Regex comment = new Regex("--");
+			Regex comment = new Regex("^--");
 			Regex setIdent = new Regex("SET IDENTITY_INSERT");
 			string[] splitPatch = patch.Split(new string[] { "\r", "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
